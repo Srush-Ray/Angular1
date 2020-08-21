@@ -19,6 +19,7 @@
       } else {
         var item = $scope.items.split(",");
         var count = item.length;
+
         for (let index = 0; index < item.length; index++) {
           const element = item[index];
           if (element == " ") {
