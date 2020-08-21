@@ -14,19 +14,23 @@
       $scope.message = "";
       $scope.message1 = "";
       $scope.comment = "";
-      var item = $scope.items.split(",");
-      var count = item.length;
-      for (let index = 0; index < item.length; index++) {
-        const element = item[index];
-        if (element == " ") {
-          $scope.comment = ", , will not be considered as an item.";
-          count--;
-        }
-      }
-      if (count <= 3) {
-        $scope.message = "Enjoy!";
+      if ($scope.items == "") {
+        $scope.comment = "Please enter data first";
       } else {
-        $scope.message1 = "Too much!";
+        var item = $scope.items.split(",");
+        var count = item.length;
+        for (let index = 0; index < item.length; index++) {
+          const element = item[index];
+          if (element == " ") {
+            $scope.comment = ", , will not be considered as an item.";
+            count--;
+          }
+        }
+        if (count <= 3) {
+          $scope.message = "Enjoy!";
+        } else {
+          $scope.message1 = "Too much!";
+        }
       }
     };
   }
